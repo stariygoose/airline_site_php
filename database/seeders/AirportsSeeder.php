@@ -13,10 +13,26 @@ class AirportsSeeder extends Seeder
     public function run(): void
     {
         DB::table('airports')->insert([
-					['name' => 'Istanbul Airport'],
-					['name' => 'Dubai International Airport'],
-					['name' => 'Paris Charles de Gaulle Airport'],
-					['name' => 'Singapore Changi Airport']
+					[
+						'name' => 'Istanbul Airport',
+						'created_at' => now()->format('Y-m-d H:i:s'),
+						'updated_at' => now()->format('Y-m-d H:i:s'),
+					],
+					[
+						'name' => 'Dubai International Airport',
+						'created_at' => now()->format('Y-m-d H:i:s'),
+						'updated_at' => now()->format('Y-m-d H:i:s'),
+					],
+					[
+						'name' => 'Paris Charles de Gaulle Airport',
+						'created_at' => now()->format('Y-m-d H:i:s'),
+						'updated_at' => now()->format('Y-m-d H:i:s'),
+					],
+					[
+						'name' => 'Singapore Changi Airport',
+						'created_at' => now()->format('Y-m-d H:i:s'),
+						'updated_at' => now()->format('Y-m-d H:i:s'),
+					]
 				]);
     }
 }

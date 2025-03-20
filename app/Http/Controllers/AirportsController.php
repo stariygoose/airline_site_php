@@ -4,16 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAirportsRequest;
 use App\Http\Requests\UpdateAirportsRequest;
+use App\Interfaces\AirportsRepositoryInterface;
 use App\Models\Airports;
+use Illuminate\Http\JsonResponse;
 
 class AirportsController extends Controller
 {
+	public function __construct(
+		private AirportsRepositoryInterface $repository
+	) {}
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        //
+      return response()->json([
+				'data' => $this->repository->getAll()
+			]);
     }
 
     /**
