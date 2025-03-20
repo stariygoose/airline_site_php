@@ -16,11 +16,11 @@ class AirportsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): JsonResponse
+    public function index()
     {
-      return response()->json([
-				'data' => $this->repository->getAll()
-			]);
+			$airports = $this->repository->getAll();
+
+      return view('airports-page', compact('airports'));
     }
 
     /**
